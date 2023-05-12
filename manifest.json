@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Block GeForce Now",
+  "version": "1.0",
+  "description": "Blocks the website play.geforcenow.com",
+  "permissions": [
+    "scripting",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.geforcenow.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "block_geforcenow",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
